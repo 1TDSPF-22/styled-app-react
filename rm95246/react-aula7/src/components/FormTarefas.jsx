@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function FormTarefas(){
+export default function FormTarefas(props){
     return(
         <div>
             <form method="post">
