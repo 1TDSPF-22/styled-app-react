@@ -43,11 +43,8 @@ export default function ListaTarefas() {
     }
 
   return (
-    <div>
-            <button onClick={addTarefa}>ADD-TAREFA</button>
-    </div>
     <DivLista>
-        {tarefa.map((t,i)=>
+        {tarefa.map((t,i)=>(
             <Tarefas
                 key={i}
                 id={i+1}
@@ -55,8 +52,10 @@ export default function ListaTarefas() {
                 setor={t.setor}
                 descricao={t.descricao}
             />
-        )}
-        
+        ))}
+        <div>
+            <button onClick={addTarefa}>ADD-TAREFA</button>
+        </div>
     </DivLista>
   )
 }
