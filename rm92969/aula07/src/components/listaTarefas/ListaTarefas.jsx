@@ -34,6 +34,14 @@ export default function ListaTarefas() {
         e.prevemtDefault()
 
         const{name, value} = e.target
+
+        if(name === "titulo"){
+            setNTarefas({"titulo" : value, "setor" : ntarefa.setor, "descricao" : ntarefa.descricao})
+        }else if(name === "setor") {
+            setNTarefas({"titulo" : ntarefa.titulo, "setor" : value, "descricao" : ntarefa.descricao})
+        }else if(name === "descricao"){
+            setNTarefas({"titulo" : ntarefa.titulo, "setor" : ntarefa.setor, "descricao" : value})
+        }
     }
 
   return (
@@ -41,6 +49,8 @@ export default function ListaTarefas() {
 
         <FormTarefas
             digit={captura}
+            novaTarefa={ntarefa}
+            adicionarNovaTarefa={addTarefa}
         />
 
         {tarefa.map((t,i)=>(
