@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 //CRIANDO UM MÓDULO
 const DivTarefa = styled.div`
-       background-color : #ffb;
+    background-color : #ffb;
     border : 2px solid #333;
     box-shadow : 5px 5px 5px #333;
     padding: 2vh 2vw;
@@ -16,7 +16,6 @@ const DivTarefa = styled.div`
         }
 
 `
-
 
 export default function Tarefa(props) {
     return (
