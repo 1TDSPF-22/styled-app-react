@@ -1,16 +1,7 @@
 import React, { useState } from 'react'
 import Tarefa from './Tarefa'
-import styled from 'styled-components'
+import { DivLista } from '../style/styled'
 
-const DivLista = styled.div`
-    width: 100%;
-    min-height: 85vh;
-    background-color: #ffb;
-    padding: 20px;
-    border: 2px solid #ccc;
-    display: flex; flex-wrap: wrap;
-    justify-content: space-around;
-`
 
 export default function ListaTarefas() {
 
@@ -34,18 +25,19 @@ export default function ListaTarefas() {
         }
     ])
 
+    const [nTarefa, setNTarefa] = useState({"Título": "", "Setor": "", "Descricao": ""})
+
     //CRIANDO UMA FUNÇÃO PARA ADICIONAR TAREFAS
     const addTarefa = () => {
 
-        const novaTarefa = {
-            titulo: "Planilha de Notas",
-            setor: "Graduação",
-            descricao: "Lançar quem não fez os exercícios."
-        }
-
-        setTarefa([...tarefa, novaTarefa])
+        setNTarefa({"Título": "", "Setor": "", "Descricao": ""})
+        setTarefa([...tarefa, nTarefa])
     }
 
+    const captura = (evento) =>{
+        evento.preventDefault()
+        const{name, value} = evento.target
+    }
 
     return (
         <div>
@@ -65,6 +57,10 @@ export default function ListaTarefas() {
                 )}
 
             </DivLista>
+
+            <formTarefas>
+                digit = {captura}
+            </formTarefas>
 
         </div>
     )
