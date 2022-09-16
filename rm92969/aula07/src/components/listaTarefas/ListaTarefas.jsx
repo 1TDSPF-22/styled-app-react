@@ -30,9 +30,19 @@ export default function ListaTarefas() {
         setTarefa([...tarefa, ntarefa])
     }
 
+    const captura = (e) => {
+        e.prevemtDefault()
+
+        const{name, value} = e.target
+    }
+
   return (
     <DivLista>
-        <FormTarefas/>
+
+        <FormTarefas
+            digit={captura}
+        />
+
         {tarefa.map((t,i)=>(
             <Tarefas
                 key={i}
