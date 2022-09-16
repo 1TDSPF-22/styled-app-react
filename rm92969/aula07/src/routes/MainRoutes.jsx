@@ -1,7 +1,8 @@
 import React from 'react'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {Route, Routes} from 'react-router-dom'
 import Home from '../components/home/Home'
 import ListaTarefas from '../components/listaTarefas/ListaTarefas'
+import FormTarefas from '../components/formTarefas/FormTarefas'
 
 export default function MainRoutes() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Tarefas from "./Tarefa"
+import Tarefas from "../tarefas/Tarefas"
 import { useState } from 'react'
 
 const DivLista = styled.div`
