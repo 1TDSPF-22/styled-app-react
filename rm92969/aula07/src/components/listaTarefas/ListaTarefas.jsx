@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Tarefas from "../tarefas/Tarefas"
 import { DivLista } from '../../style/styled'
+import FormTarefas from '../formTarefas/FormTarefas'
 
 
 export default function ListaTarefas() {
@@ -22,19 +23,16 @@ export default function ListaTarefas() {
     }])
 
     //Criando uma função para adicionar tarefas
-
+    const [ntarefa, setNTarefas] = useState({"titulo" : "", "setor" : "", "descricao" : ""})
     const addTarefa = () => {
-        const novaTarefa = {
-            titulo: 'Planilha de Notas',
-            setor: 'Graduação',
-            descricao: 'Lançar qem não fez os ecercícios',
-        }
-
-        setTarefa([...tarefa, novaTarefa])
+        
+        setNTarefas({"titulo" : "", "setor" : "", "descricao" : ""})
+        setTarefa([...tarefa, ntarefa])
     }
 
   return (
     <DivLista>
+        <FormTarefas/>
         {tarefa.map((t,i)=>(
             <Tarefas
                 key={i}
