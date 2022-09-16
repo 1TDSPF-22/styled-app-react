@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
-  return (
-    <div>
-      <header>
-        <nav>
-          <link to="/">Home</link>
-          <link to="/lt">Lista de Tarefas</link>
-          <link to="/add">Adicionar Tarefas</link>
-        </nav>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <header>
+                <nav>
+                    <Link to="/">Home</Link>
+                    <Link to="/lt">Lista de Tarefas</Link>
+                    <Link to="/add">Adicionar Tarefa</Link>
+                </nav>
+            </header>
+        </div>
+    )
 }
