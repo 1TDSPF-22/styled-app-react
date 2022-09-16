@@ -1,16 +1,9 @@
 import React, { useState } from 'react'
 import Tarefa from './Tarefa'
-import styled from 'styled-components'
+import { DivTarefa } from '../style/style'
+import { DivLista } from '../style/style'
+import FormTarefas from './FormTarefas'
 
-const DivLista = styled.div`
-    width: 100%;
-    min-height: 85vh;
-    background-color: #ffb;
-    padding: 20px;
-    border: 2px solid #ccc;
-    display: flex; flex-wrap: wrap;
-    justify-content: space-around;
-`
 
 export default function ListaTarefas() {
 
@@ -34,17 +27,38 @@ export default function ListaTarefas() {
         }
     ])
 
+    const[nTarefa, setNTarefa] = useState({"titulo" : "","setor": "","descricao": ""})
+
     //CRIANDO UMA FUNÇÃO PARA ADICIONAR TAREFAS
     const addTarefa = () => {
 
-        const novaTarefa = {
-            titulo: "Planilha de Notas",
-            setor: "Graduação",
-            descricao: "Lançar quem não fez os exercícios."
+        setNTarefa({"titulo" : "","setor": "","descricao": ""})
+        setTarefa([...tarefa, nTarefa])
+
+    }
+
+    const captura = (e) => {
+        e.preventDefault()
+        const{name.value} = e.target
+
+        if(name === "titulo"){
+            setNTarefa({"titulo" : value,"setor": nTarefa.setor,"descricao": nTarefa.descricao})
+        }else if(name === "setor"){
+        setNTarefa({"titulo" : nTarefa.titulo,"setor": nTarefa.setor,"descricao": value})
+        }}else if(name === "descricao"){
+            setNTarefa({"titulo" : nTarefa.titulo,"setor": nTarefa.setor,"descricao": value})
+            }
         }
 
-        setTarefa([...tarefa, novaTarefa])
+
+
+
+
+
     }
+
+
+
 
 
     return (
@@ -54,6 +68,10 @@ export default function ListaTarefas() {
                 <button onClick={addTarefa}>ADD-TAREFA</button>
             </div>
             <DivLista>
+
+                <FormTarefas/>
+                    digit={captura}
+
                 {tarefa.map((t, i) =>
                     <Tarefa
                         key={i}
