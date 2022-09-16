@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import FormTarefas from '../components/FormTarefas'
 import Home from '../components/Home'
 import ListaTarefas from '../components/ListaTarefas'
