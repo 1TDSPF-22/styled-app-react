@@ -24,8 +24,8 @@ export default function ListaTarefas() {
 
     //Criando uma função para adicionar tarefas
     const [ntarefa, setNTarefas] = useState({"titulo" : "", "setor" : "", "descricao" : ""})
-    const addTarefa = () => {
-        
+    const addTarefa = (e) => {
+        e.prevemtDefault()
         setNTarefas({"titulo" : "", "setor" : "", "descricao" : ""})
         setTarefa([...tarefa, ntarefa])
     }
