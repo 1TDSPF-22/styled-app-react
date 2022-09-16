@@ -1,6 +1,5 @@
 import React from 'react'
 import Home from './components/Home'
-import ListaTarefas from './components/ListaTarefas'
 import MainRoutes from './routes/MainRoutes'
 
 export default function App() {
