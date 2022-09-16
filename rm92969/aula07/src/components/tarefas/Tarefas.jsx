@@ -1,18 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import { DivTarefa } from '../../style/styled'
 
 //Criando um módulo
-const DivTarefa = styled.div`
-    background-color: #fff;
-    border: 2px solid #333;
-    box-shadow: 5px 5px 5px #333;
-    padding: 20px;
-    text-align: center;
-    width: 350px;
-    height: 200px;
-    margin: 10px;
-    h2,p{ padding-bottom: 10px; }
-`
+
 
 export default function Tarefas(props) {
   return (
