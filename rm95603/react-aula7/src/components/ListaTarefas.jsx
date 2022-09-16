@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Tarefa from './Tarefa'
 import { DivLista } from '../style/styled'
+import FormTarefas from './FormTarefas'
 
 
 
@@ -27,24 +28,43 @@ export default function ListaTarefas() {
         }
     ])
 
+    const[nTarefa, setNTarefa] = useState({"titulo" : "", "setor" : "", "descricao" : ""})
+
 
     //CRIANDO UMA FUNÇÃO PARA ADICIONAR TAREFAS
     const addTarefa = ()=>{
 
-        const novaTarefa = {
-            titulo: " Planilha de Notas",
-            setor: "Graduação",
-            descricao: "Lançar quem não fez Exercícios"
+        setNTarefa({"titulo" : "", "setor" : "", "descricao" : ""})
+        setTarefa([...tarefa, nTarefa])
+    } 
+
+    const captura = (e) =>{
+        e.preventDefault()
+        
+        const{name,value} = e.target
+
+        if(name == "titulo"){
+            setNTarefa({"titulo" : value, "setor" : nTarefa.setor, "descricao" : nTarefa.descricao})
+        }else if(name == "setor"){
+            setNTarefa({"titulo" : nTarefa.titulo, "setor" : value, "descricao" : nTarefa.descricao})
+        }else if(name == "descricao"){
+            setNTarefa({"titulo" : nTarefa.titulo, "setor" : nTarefa.setor, "descricao" : value})
         }
 
-        setTarefa([...tarefa, novaTarefa])
-    } 
+    }
 
 
     return (
         <div>
             <p>Lista de Tarefas</p>
             <DivLista>
+
+                <FormTarefas
+                    digit={captura}
+                    novaTarefa={nTarefa}
+                    adicionarNovaTarefa={addTarefa}
+                />
+
                 {tarefa.map((t, i) =>
                     <Tarefa
                         key={i}
