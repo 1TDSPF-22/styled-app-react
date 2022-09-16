@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
-//CRIANDO UM MODULO 
+//CRIANDO UM MÓDULO
 const DivTarefa = styled.div`
-    background-color:#ffb;
-    border: 2px solid #333;
-    box-shadow: 5px 5px 5px #333;
-    padding:2vh 2vw;
+       background-color : #ffb;
+    border : 2px solid #333;
+    box-shadow : 5px 5px 5px #333;
+    padding: 2vh 2vw;
     text-align:center;
     width:50vw;
     height:20vh;
@@ -14,7 +14,9 @@ const DivTarefa = styled.div`
     h2,p{
             padding-bottom:1vh
         }
+
 `
+
 
 export default function Tarefa(props) {
     return (
@@ -25,5 +27,5 @@ export default function Tarefa(props) {
             <p>{props.id}</p>
         </DivTarefa>
     )
-
 }
+
