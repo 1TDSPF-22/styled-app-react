@@ -33,7 +33,8 @@ export default function ListaTarefas() {
 
 	const captura = (e) => {
 		e.preventDefault();
-		const [name, value] = e.target;
+
+		const { name, value } = e.target;
 
 		if (name === "titulo") {
 			setNTarefa({ titulo: value, setor: nTarefa.setor, descricao: nTarefa.descricao });
@@ -52,6 +53,7 @@ export default function ListaTarefas() {
 			</div>
 			<DivLista>
 				<FormTarefas digit={captura} novaTarefa={nTarefa} adicionarNovaTarefa={addTarefa} />
+
 				{tarefa.map((t, i) => (
 					<Tarefa key={i} id={i + 1} titulo={t.titulo} setor={t.setor} descricao={t.descricao} />
 				))}
